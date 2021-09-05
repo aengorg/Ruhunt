@@ -2,8 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>RUHUNT</title>
     <meta property="og:image" content="https://ruhunt.online/preview.png" />
     <meta property="og:image:width" content="968" />
@@ -12,8 +15,6 @@
       name="description"
       content="RUHUNT is a little community from Russia that trying to make HUNT a little bit better."
     />
-    <link rel="icon" href="./ruhunt-logo.png" />
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-JEH41JXRCM"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
@@ -23,7 +24,6 @@
       gtag('js', new Date());
       gtag('config', 'G-JEH41JXRCM');
     </script>
-    <!-- Critical CSS -->
     <style>
       * {
         padding: 0;
@@ -40,25 +40,7 @@
     </style>
   </head>
   <body>
-    <div id="root">
-      <iframe
-        src="https://hunt-map.info/?/ru"
-        frameborder="0"
-        style="
-          position: fixed;
-          top: 0;
-          left: 0;
-          bottom: 0;
-          right: 0;
-          width: 100%;
-          height: 100%;
-          border: none;
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-          z-index: 999999;
-        "
-      ></iframe>
-    </div>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
   </body>
 </html>

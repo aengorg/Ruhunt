@@ -1,0 +1,28 @@
+.ruhunt-logo {
+  padding-top: 5%;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.ruhunt-text {
+  font-weight: bold;
+  padding-left: 5%;
+  padding-right: 5%;
+  font-size: 3rem;
+  text-align: center;
+  display: block;
+  text-transform: uppercase;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.ruhunt-link {
+  color: var(--color-1);
+  text-decoration: none;
+}
+
+.ruhunt-link:hover,
+.ruhunt-link:hover .ruhunt-logo .st1 {
+  color: var(--color-2-hover);
+  fill: var(--color-2-hover);
+}
