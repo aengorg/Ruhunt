@@ -15,12 +15,12 @@ function App() {
         <Router>
           <ul className='app_menu menu'>
             <li className='menu_item'>
-              <NavLink exact to='/'>
-                Home
-              </NavLink>
+              <NavLink to='/community'>Community</NavLink>
             </li>
             <li className='menu_item'>
-              <NavLink to='/map'>Map</NavLink>
+              <NavLink exact to='/'>
+                Map
+              </NavLink>
             </li>
             <li className='menu_item menu_item--rivals'>
               <NavLink to='/rivals'>
@@ -35,10 +35,10 @@ function App() {
         <Router>
           <Switch>
             <Route exact path='/'>
-              <MainPage />
-            </Route>
-            <Route path='/map'>
               <MapPage />
+            </Route>
+            <Route path='/community'>
+              <MainPage />
             </Route>
             <Route path='/rivals'>
               <TurPage />
