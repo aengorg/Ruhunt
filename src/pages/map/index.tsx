@@ -1,8 +1,12 @@
+import { IS_MAP_OFF } from 'constants/index';
+
 export const MapPage = () => {
+  if (IS_MAP_OFF) return null;
+
   return (
     <iframe
-      title='hunt-map-info'
-      src='https://hunt-map.info/?/ru'
+      title="hunt-map-info"
+      src="https://hunt-map.info/?/ru"
       style={{
         position: 'fixed',
         top: '40px',
@@ -14,7 +18,7 @@ export const MapPage = () => {
         border: 'none',
         margin: '0',
         padding: '0',
-        overflow: 'hidden'
+        overflow: 'hidden',
       }}
     />
   );

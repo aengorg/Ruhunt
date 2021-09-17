@@ -1,11 +1,10 @@
 import ReactMarkdown from 'react-markdown';
 import { useEffect, useState } from 'react';
-import { RUHUNT_FORM_RIVALS_1 } from 'constants/index';
 
-import MarkdownFile from 'assets/data/rivals.md';
+import MarkdownFile from 'assets/data/special.md';
 import './style.css';
 
-export const TurPage = () => {
+export const SpecialPage = () => {
   const [text, setText] = useState('');
 
   useEffect(() => {
@@ -17,15 +16,7 @@ export const TurPage = () => {
   }, []);
 
   return (
-    <div className='rivals-content'>
-      <a
-        href={RUHUNT_FORM_RIVALS_1}
-        className='ruhunt-link-form-rivals'
-        target='_blank'
-        rel='noopener noreferrer'
-      >
-        Подать заявку на участие
-      </a>
+    <div>
       <ReactMarkdown className='md' children={text} />
     </div>
   );

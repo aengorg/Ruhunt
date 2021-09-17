@@ -1,58 +1,47 @@
 import { HashRouter as Router, Switch, Route, NavLink } from 'react-router-dom';
+import cn from 'classnames';
 
-import { MainPage } from './pages/main';
-import { MapPage } from './pages/map';
-import { TurPage } from './pages/rivals';
-
-// import logoRivals from './assets/images/rivals.png';
+import { routes, specialRoutes } from 'router/routes';
 
 import './App.css';
 
 function App() {
+  const allRoutes = [...routes, ...specialRoutes];
+
   return (
-    <div className='app'>
-      <header className='app_header'>
+    <div className="app">
+      <header className="app_header">
         <Router>
-          <ul className='app_menu menu'>
-            <li className='menu_item'>
-              <NavLink to='/community'>Community</NavLink>
-            </li>
-            <li className='menu_item'>
-              <NavLink exact to='/'>
-                Map
-              </NavLink>
-            </li>
-            <li className='menu_item menu_item--rivals'>
-              <NavLink to='/rivals'>
-                {/* <img src={logoRivals} alt='logo rivals' height='30px' width='auto' /> */}
-                Rivals
-              </NavLink>
-            </li>
+          <ul className="app_menu menu">
+            {routes
+              .sort((a, b) => a.id - b.id)
+              .map(({ id, isExact, link, className, text }) => (
+                <li key={id} className={cn('menu_item', className)}>
+                  <NavLink exact={isExact} to={link}>
+                    {text}
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </Router>
       </header>
-      <div className='app_content'>
+      <div className="app_content">
         <Router>
           <Switch>
-            <Route exact path='/'>
-              <MapPage />
-            </Route>
-            <Route path='/community'>
-              <MainPage />
-            </Route>
-            <Route path='/rivals'>
-              <TurPage />
-            </Route>
-            <Route path='/rivals/registration'>
-              <TurPage />
-            </Route>
-            <Route path='/rivals/leaderboard'>
-              <TurPage />
-            </Route>
+            {allRoutes.map(({ id, isExact, link, component }) => (
+              <Route
+                key={id}
+                exact={isExact}
+                path={link}
+                component={component}
+              />
+            ))}
           </Switch>
         </Router>
       </div>
-      <div className='app_footer'>© {new Date(Date.now()).getFullYear()} RUHUNT </div>
+      <div className="app_footer">
+        © {new Date(Date.now()).getFullYear()} RUHUNT{' '}
+      </div>
     </div>
   );
 }
