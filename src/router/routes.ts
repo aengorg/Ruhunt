@@ -39,5 +39,5 @@ export const routes = [
 ];
 
 export const specialRoutes = [
-  // { id: 0, isExact:true, link: '/xxx', component: SpecialPage, text: 'xxx', className: '' },
+  { id: 99, isExact:true, link: '/test', component: SpecialPage, text: 'test', className: '' },
 ];
