@@ -1,7 +1,7 @@
 import { MainPage } from 'pages/main';
 import { MapPage } from 'pages/map';
 import { TurPage } from 'pages/rivals';
-// import { SpecialPage } from 'pages/special';
+import { SpecialPage } from 'pages/special';
 
 export const routes = [
   {
